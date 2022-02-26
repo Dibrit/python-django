@@ -1,1 +1,2 @@
-def abc(*arg, ):
+def abc(*arg):
+    print("hello")
