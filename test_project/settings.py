@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'many_to_one',
     'many_to_many',
-    'decorator'
+    'decorator',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
