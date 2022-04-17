@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'many_to_one',
     'many_to_many',
     'decorator',
-    'rest_framework',
-    'account'
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
