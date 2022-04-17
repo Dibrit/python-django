@@ -7,6 +7,6 @@ from .views import CarViewSet
 app_name = "account"
 
 router = DefaultRouter()
-router.register(r"car", CarViewSet, base_name="car")
+router.register(r"car", CarViewSet)
 
 urlpatterns = router.urls
