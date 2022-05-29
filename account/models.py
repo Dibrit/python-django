@@ -1,6 +1,10 @@
 from django.db import models
 from utils.choices import Color, Country, Box
 from mixins.models import TimestampMixin
+from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
+from django.contrib.auth.models import User
+
 
 
 class Car(TimestampMixin):
@@ -21,3 +25,23 @@ class Car(TimestampMixin):
 
 	def __str__(self):
 		return f'{self.name}'
+
+
+# class UserSerializer(serializers.ModelSerializer):
+#     email = serializers.EmailField(
+#             required=True,
+#             validators=[UniqueValidator(queryset=User.objects.all())]
+#             )
+#     username = serializers.CharField(
+#             validators=[UniqueValidator(queryset=User.objects.all())]
+#             )
+#     password = serializers.CharField(min_length=8)
+#
+#     def create(self, validated_data):
+#         user = User.objects.create_user(validated_data['username'], validated_data['email'],
+#              validated_data['password'])
+#         return user
+#
+#     class Meta:
+#         model = User
+#         fields = ('id', 'username', 'email', 'password')

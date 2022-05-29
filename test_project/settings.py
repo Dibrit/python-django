@@ -41,8 +41,15 @@ INSTALLED_APPS = [
     'many_to_many',
     'decorator',
     'rest_framework',
-    'account'
+    'account',
+    'reg'
 ]
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'nesvetajlovartem@gmail.com'
+EMAIL_HOST_PASSWORD = 'idi_nah_s_parolem2'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,7 +88,7 @@ WSGI_APPLICATION = 'test_project.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'test_project',
+        "NAME": 'test_project1',
         "USER": 'test_user',
         "PASSWORD": "123456789",
         "HOST": "localhost",
@@ -92,7 +99,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
-
+AUTH_USER_MODEL = 'reg.User'
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
