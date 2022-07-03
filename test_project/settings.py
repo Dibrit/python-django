@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
 
 # Application definition
 
@@ -44,12 +46,12 @@ INSTALLED_APPS = [
     'account',
     'reg'
 ]
-EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'nesvetajlovartem@gmail.com'
-EMAIL_HOST_PASSWORD = 'idi_nah_s_parolem2'
+EMAIL_HOST_USER = "prostologin2003@yandex.ru"
+EMAIL_HOST_PASSWORD = "SurXGcKC6LmuCQ3"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,8 +90,8 @@ WSGI_APPLICATION = 'test_project.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'test_project1',
-        "USER": 'test_user',
+        "NAME": 'test_project',
+        "USER": 'test_user1',
         "PASSWORD": "123456789",
         "HOST": "localhost",
         "PORT": "5432",

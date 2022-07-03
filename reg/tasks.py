@@ -2,12 +2,11 @@ from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.conf import settings
 from reg.models import User
-# from celery import Celery
-
-# app = Celery('tasks', broker='redis://guest@localhost//')
+from celery import shared_task
 
 
-# @app.task()
+
+@shared_task()
 def send_mail_all(text1, text2):
     try:
         for user in User.objects.all():
@@ -22,7 +21,7 @@ def send_mail_all(text1, text2):
         print('fail')
 
 
-# @app.task()
+@shared_task()
 def send_mail_personal(user_id, text1, text2):
      UserModel = get_user_model()
      try:
@@ -38,7 +37,8 @@ def send_mail_personal(user_id, text1, text2):
          print('fail')
 
 
-# @app.task()
+@shared_task()
 def email(x):
-     return User.objects.filter(email=x)
+    print("sfgkijh")
+    return x
 

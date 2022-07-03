@@ -4,7 +4,11 @@ from django.contrib.auth.models import (
     BaseUserManager,
     PermissionsMixin,
 )
-
+# {
+#     "username": "artem",
+#     "email": "nikolayvaganov2@gmail.com",
+#     "password" : "12345678"
+# }
 
 class UserManager(BaseUserManager):
     def create_user(self, username, email, password=None):
